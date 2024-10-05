@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Hotstar Clone - Movies Display</title>
+		<style>
+			body {
+				font-family: 'Arial', sans-serif;
+				margin: 0;
+				background-color: #141414;
+				color: #fff;
+			}
+
+			/* Header Section with background color and top border */
+			header {
+				padding: 10px 20px;
+				display: flex;
+				align-items: center;
+				background-color: #1a1a1a;
+				/* Dark background color for the header */
+				border-top: 5px solid #ff6347;
+				/* Top border with logo color */
+			}
+
+			.logo {
+				font-size: 24px;
+				font-weight: bold;
+				color: #ff6347;
+				/* Tomato color for logo */
+				margin-right: auto;
+				/* Add space to the right of the logo */
+			}
+
+			/* Welcome Message Title */
+			.welcome-title {
+				text-align: center;
+				font-size: 24px;
+				/* Larger size for the title */
+				color: #ff6347;
+				/* Tomato color for title */
+				margin-top: 10px;
+				/* Margin for separation */
+			}
+
+			/* Welcome Message */
+			.welcome-message {
+				text-align: center;
+				margin: 5px 0;
+				font-size: 12px;
+				/* Very small size for the welcome message */
+				color: #fff;
+				/* White color for welcome message */
+			}
+
+			/* Carousel Section */
+			.carousel {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				/* Center carousel items */
+				padding: 10px;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			/* Carousel Items with Titles */
+			.carousel-item {
+				width: calc(33.333% - 20px);
+				/* Three items per row with space */
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				margin: 10px;
+				padding: 5px;
+				border-radius: 8px;
+				transition: transform 0.2s;
+			}
+
+			.carousel-item:hover {
+				transform: scale(1.05);
+				/* Slightly enlarge on hover */
+			}
+
+			.carousel-item img {
+				width: 100%;
+				height: auto;
+				max-height: 150px;
+				object-fit: cover;
+				border-radius: 8px;
+				cursor: pointer;
+			}
+
+			.carousel-item a {
+				margin-top: 5px;
+				color: #ff6347;
+				/* Tomato color for the title */
+				text-decoration: none;
+				font-size: 14px;
+				text-align: center;
+				font-weight: bold;
+				transition: color 0.2s;
+			}
+
+			.carousel-item a:hover {
+				color: #ff4500;
+				/* Dark orange on hover */
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+				/* Text shadow effect */
+			}
+
+			/* Footer Section without background color */
+			footer {
+				padding: 10px;
+				text-align: center;
+				color: #ff6347;
+				/* Tomato color for footer text */
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.carousel-item {
+					width: calc(50% - 20px);
+					/* Two items per row on tablet */
+				}
+			}
+
+			@media (max-width: 480px) {
+				.carousel-item {
+					width: 100%;
+					/* One item per row on mobile */
+				}
+
+				.logo {
+					font-size: 20px;
+					/* Smaller logo size on mobile */
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!-- Logo Left-Aligned, No Menu -->
+		<header>
+			<div class="logo">MediaVibeIT</div> <!-- Updated Logo -->
+		</header>
+
+		<!-- Welcome Message Title and Message -->
+		<div class="welcome-title">Watch Now</div>
+		<div class="welcome-message">Enjoy Your Favorite Shows Streaming Live!</div> <!-- Updated Streaming Message -->
+
+		<!-- Carousel Section Centered -->
+		<div class="carousel">
+			<!-- First row of items -->
+			<div class="carousel-item">
+				<a href="karthika-deepam.html">
+					<img src="https://images.filmibeat.com/webp/te/img/2024/08/karthika-deepam-2-8832-1723999553.jpg" alt="Karthika Deepam 2">
+				</a>
+				<a href="karthika-deepam.html">Karthika Deepam 2</a>
+			</div>
+			<div class="carousel-item">
+				<a href="brahmamudi.html">
+					<img src="https://upload.wikimedia.org/wikipedia/en/f/f9/Brahmamudi.jpg" alt="Brahmamudi">
+				</a>
+				<a href="brahmamudi.html">Brahmamudi</a>
+			</div>
+			<div class="carousel-item">
+				<a href="satya-bhama.html">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2qab8nYPofy3fraUeubM-WVGwLll1Efb6cnk3583uqm7tCe-QW-y4KOl&s=10" alt="Satya Bhama">
+				</a>
+				<a href="satya-bhama.html">Satya Bhama</a>
+			</div>
+
+			<!-- Second row of items -->
+			<div class="carousel-item">
+				<a href="chinni.html">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh2Hf1NO8Ir_sMRioZXDYySscfhx0G8NE_L0crKeK8KYpAHQU7-1TNvIc&s=10" alt="Chinni">
+				</a>
+				<a href="chinni.html">Chinni</a>
+			</div>
+			<div class="carousel-item">
+				<a href="mama-garu.html">
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFoJiuXby606i6oY1MNEiYlG9Iy_Y3On30w&usqp=CAU" alt="Mama Garu">
+				</a>
+				<a href="mama-garu.html">Mama Garu</a>
+			</div>
+		</div>
+
+		<!-- Footer without Background Color -->
+		<footer>
+			<p>&copy; 2024 MediaVibeIT. All rights reserved.</p>
+		</footer>
+
+	</body>
+
+</html>
