@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grid of Shows</title>
+    <title>Watch Movies & TV Serials</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
@@ -128,6 +128,7 @@
             object-fit: cover;
             border-radius: 8px;
             transition: transform 0.3s ease;
+            cursor: pointer; /* Change cursor to pointer */
         }
 
         .show-item img:hover {
@@ -136,7 +137,7 @@
 
         .show-item a.title {
             color: #ff6347;
-            text-decoration: none;
+            text-decoration: none; /* Remove underline */
             font-size: 16px;
             font-weight: bold;
             display: block;
@@ -144,7 +145,7 @@
         }
 
         .show-item a.title:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Optional hover effect */
         }
 
         /* Responsive Grid for Mobile */
@@ -226,80 +227,55 @@
     <div class="show-grid">
         <!-- First show item -->
         <div class="show-item">
-            <img src="https://images.filmibeat.com/webp/te/img/2024/08/karthika-deepam-2-8832-1723999553.jpg" alt="Karthika Deepam 2">
+            <a href="karthika-deepam.html">
+                <img src="https://images.filmibeat.com/webp/te/img/2024/08/karthika-deepam-2-8832-1723999553.jpg" alt="Karthika Deepam 2">
+            </a>
             <a href="karthika-deepam.html" class="title">Karthika Deepam 2</a>
         </div>
 
         <!-- Second show item -->
         <div class="show-item">
-            <img src="https://upload.wikimedia.org/wikipedia/en/f/f9/Brahmamudi.jpg" alt="Brahmamudi">
+            <a href="brahmamudi.html">
+                <img src="https://upload.wikimedia.org/wikipedia/en/f/f9/Brahmamudi.jpg" alt="Brahmamudi">
+            </a>
             <a href="brahmamudi.html" class="title">Brahmamudi</a>
         </div>
 
         <!-- Third show item -->
         <div class="show-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2qab8nYPofy3fraUeubM-WVGwLll1Efb6cnk3583uqm7tCe-QW-y4KOl&s=10" alt="Satya Bhama">
+            <a href="satya-bhama.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2qab8nYPofy3fraUeubM-WVGwLll1Efb6cnk3583uqm7tCe-QW-y4KOl&s=10" alt="Satya Bhama">
+            </a>
             <a href="satya-bhama.html" class="title">Satya Bhama</a>
         </div>
 
         <!-- Fourth show item -->
         <div class="show-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh2Hf1NO8Ir_sMRioZXDYySscfhx0G8NE_L0crKeK8KYpAHQU7-1TNvIc&s=10" alt="Chinni">
+            <a href="chinni.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh2Hf1NO8Ir_sMRioZXDYySscfhx0G8NE_L0crKeK8KYpAHQU7-1TNvIc&s=10" alt="Chinni">
+            </a>
             <a href="chinni.html" class="title">Chinni</a>
         </div>
 
         <!-- Fifth show item -->
         <div class="show-item">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFoJiuXby606i6oY1MNEiYlG9Iy_Y3On30w&usqp=CAU" alt="Mama Garu">
+            <a href="mama-garu.html">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFoJiuXby606i6oY1MNEiYlG9Iy_Y3On30w&usqp=CAU" alt="Mama Garu">
+            </a>
             <a href="mama-garu.html" class="title">Mama Garu</a>
-        </div>
-    </div>
-
-    <!-- Movies Label Centered -->
-    <div class="section-label">Movies</div>
-
-    <!-- Grid Section: Movies Grid -->
-    <div class="show-grid">
-        <!-- First movie item -->
-        <div class="show-item">
-            <img src="https://via.placeholder.com/150" alt="Movie 1">
-            <a href="movie1.html" class="title">Movie 1</a>
-        </div>
-
-        <!-- Second movie item -->
-        <div class="show-item">
-            <img src="https://via.placeholder.com/150" alt="Movie 2">
-            <a href="movie2.html" class="title">Movie 2</a>
-        </div>
-
-        <!-- Third movie item -->
-        <div class="show-item">
-            <img src="https://via.placeholder.com/150" alt="Movie 3">
-            <a href="movie3.html" class="title">Movie 3</a>
-        </div>
-
-        <!-- Fourth movie item -->
-        <div class="show-item">
-            <img src="https://via.placeholder.com/150" alt="Movie 4">
-            <a href="movie4.html" class="title">Movie 4</a>
-        </div>
-
-        <!-- Fifth movie item -->
-        <div class="show-item">
-            <img src="https://via.placeholder.com/150" alt="Movie 5">
-            <a href="movie5.html" class="title">Movie 5</a>
         </div>
     </div>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 MediaVibeIT</p>
+        &copy; 2024 MediaVibeIT
     </footer>
 
     <script>
+        // Toggle menu for mobile
         function toggleMenu() {
-            const navMenu = document.getElementById('nav-menu');
-            navMenu.classList.toggle('nav-active');
+            const nav = document.getElementById("nav-menu");
+            nav.classList.toggle("nav-active");
         }
     </script>
 </body>
