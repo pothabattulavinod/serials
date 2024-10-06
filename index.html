@@ -1,199 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid of Shows</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #141414;
+            color: #fff;
+        }
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
-		<style>
-			body {
-				font-family: 'Arial', sans-serif;
-				margin: 0;
-				background-color: #141414;
-				color: #fff;
-			}
+        /* Header Section */
+        header {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between logo and menu */
+            background-color: #1a1a1a;
+            border-top: 5px solid #ff6347;
+            position: relative; /* For absolute positioning of the menu */
+        }
 
-			/* Header Section with background color and top border */
-			header {
-				padding: 10px 20px;
-				display: flex;
-				align-items: center;
-				background-color: #1a1a1a;
-				/* Dark background color for the header */
-				border-top: 5px solid #ff6347;
-				/* Top border with logo color */
-			}
+        /* Logo */
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6347;
+        }
 
-			.logo {
-				font-size: 24px;
-				font-weight: bold;
-				color: #ff6347;
-				/* Tomato color for logo */
-				margin-right: auto;
-				/* Add space to the right of the logo */
-			}
+        /* Hamburger Icon */
+        .hamburger {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            cursor: pointer;
+        }
 
-			/* Welcome Message Title */
-			.welcome-title {
-				text-align: center;
-				font-size: 24px;
-				/* Larger size for the title */
-				color: #ff6347;
-				/* Tomato color for title */
-				margin-top: 10px;
-				/* Margin for separation */
-			}
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #ff6347;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
 
-			/* Welcome Message */
-			.welcome-message {
-				text-align: center;
-				margin: 5px 0;
-				font-size: 12px;
-				/* Very small size for the welcome message */
-				color: #fff;
-				/* White color for welcome message */
-			}
+        /* Menu Styles */
+        nav {
+            display: flex; /* Horizontal menu */
+        }
 
-			/* Carousel Section */
-			.carousel {
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				/* Center carousel items */
-				padding: 10px;
-				max-width: 1200px;
-				margin: 0 auto;
-			}
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex; /* Horizontal layout for menu */
+            gap: 30px; /* Space between menu items */
+            margin: 0; /* Remove margin */
+        }
 
-			/* Carousel Items with Titles */
-			.carousel-item {
-				width: calc(33.333% - 20px);
-				/* Three items per row with space */
-				display: flex;
-				flex-direction: column;
-				justify-content: flex-start;
-				align-items: center;
-				margin: 10px;
-				padding: 5px;
-				border-radius: 8px;
-				transition: transform 0.2s;
-			}
+        nav a {
+            color: #ff6347;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            display: flex; /* Flexbox for icon and text */
+            align-items: center; /* Center icon vertically */
+        }
 
-			.carousel-item:hover {
-				transform: scale(1.05);
-				/* Slightly enlarge on hover */
-			}
+        nav a i {
+            margin-right: 8px; /* Space between icon and text */
+        }
 
-			.carousel-item img {
-				width: 100%;
-				height: auto;
-				max-height: 150px;
-				object-fit: cover;
-				border-radius: 8px;
-				cursor: pointer;
-			}
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-			.carousel-item a {
-				margin-top: 5px;
-				color: #ff6347;
-				/* Tomato color for the title */
-				text-decoration: none;
-				font-size: 14px;
-				text-align: center;
-				font-weight: bold;
-				transition: color 0.2s;
-			}
+        /* Welcome Message */
+        .welcome-message {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 8px;
+        }
 
-			.carousel-item a:hover {
-				color: #ff4500;
-				/* Dark orange on hover */
-				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-				/* Text shadow effect */
-			}
+        .welcome-message h1 {
+            color: #ff6347;
+            font-size: 28px;
+            margin: 0;
+        }
 
-			/* Footer Section without background color */
-			footer {
-				padding: 10px;
-				text-align: center;
-				color: #ff6347;
-				/* Tomato color for footer text */
-			}
+        .welcome-message p {
+            font-size: 16px;
+            color: #fff;
+            margin-top: 10px;
+        }
 
-			/* Responsive Design */
-			@media (max-width: 768px) {
-				.carousel-item {
-					width: calc(50% - 20px);
-					/* Two items per row on tablet */
-				}
-			}
+        /* Centering labels */
+        .section-label {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff6347;
+            margin: 20px 0; /* Space around labels */
+            text-align: center; /* Center text */
+        }
 
-			@media (max-width: 480px) {
-				.carousel-item {
-					width: 100%;
-					/* One item per row on mobile */
-				}
+        /* Grid Section */
+        .show-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Set base column size */
+            gap: 20px;
+            padding: 20px;
+        }
 
-				.logo {
-					font-size: 20px;
-					/* Smaller logo size on mobile */
-				}
-			}
-		</style>
-	</head>
+        /* Grid Items */
+        .show-item {
+            background-color: #1a1a1a;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
 
-	<body>
+        .show-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
 
-		<!-- Logo Left-Aligned, No Menu -->
-		<header>
-			<div class="logo">MediaVibeIT</div> <!-- Updated Logo -->
-		</header>
+        .show-item img:hover {
+            transform: scale(1.05); /* Hover effect */
+        }
 
-		<!-- Welcome Message Title and Message -->
-		<div class="welcome-title">Watch Now</div>
-		<div class="welcome-message">Enjoy Your Favorite Shows Streaming Live!</div> <!-- Updated Streaming Message -->
+        .show-item a.title {
+            color: #ff6347;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            margin-top: 8px;
+        }
 
-		<!-- Carousel Section Centered -->
-		<div class="carousel">
-			<!-- First row of items -->
-			<div class="carousel-item">
-				<a href="karthika-deepam.html">
-					<img src="https://images.filmibeat.com/webp/te/img/2024/08/karthika-deepam-2-8832-1723999553.jpg" alt="Karthika Deepam 2">
-				</a>
-				<a href="karthika-deepam.html">Karthika Deepam 2</a>
-			</div>
-			<div class="carousel-item">
-				<a href="brahmamudi.html">
-					<img src="https://upload.wikimedia.org/wikipedia/en/f/f9/Brahmamudi.jpg" alt="Brahmamudi">
-				</a>
-				<a href="brahmamudi.html">Brahmamudi</a>
-			</div>
-			<div class="carousel-item">
-				<a href="satya-bhama.html">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2qab8nYPofy3fraUeubM-WVGwLll1Efb6cnk3583uqm7tCe-QW-y4KOl&s=10" alt="Satya Bhama">
-				</a>
-				<a href="satya-bhama.html">Satya Bhama</a>
-			</div>
+        .show-item a.title:hover {
+            text-decoration: underline;
+        }
 
-			<!-- Second row of items -->
-			<div class="carousel-item">
-				<a href="chinni.html">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh2Hf1NO8Ir_sMRioZXDYySscfhx0G8NE_L0crKeK8KYpAHQU7-1TNvIc&s=10" alt="Chinni">
-				</a>
-				<a href="chinni.html">Chinni</a>
-			</div>
-			<div class="carousel-item">
-				<a href="mama-garu.html">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFoJiuXby606i6oY1MNEiYlG9Iy_Y3On30w&usqp=CAU" alt="Mama Garu">
-				</a>
-				<a href="mama-garu.html">Mama Garu</a>
-			</div>
-		</div>
+        /* Responsive Grid for Mobile */
+        @media (max-width: 768px) {
+            .show-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller size for mobile */
+            }
 
-		<!-- Footer without Background Color -->
-		<footer>
-			<p>&copy; 2024 MediaVibeIT. All rights reserved.</p>
-		</footer>
+            nav {
+                display: none; /* Hide menu by default */
+            }
 
-	</body>
+            .hamburger {
+                display: flex; /* Show hamburger icon */
+            }
 
+            .nav-active {
+                display: flex; /* Show menu when active */
+                flex-direction: column; /* Stack items vertically */
+                position: absolute;
+                background-color: #1a1a1a;
+                top: 60px; /* Position below the header */
+                left: 0;
+                width: 100%; /* Full width */
+                padding: 10px;
+                z-index: 10; /* Ensure it's on top */
+            }
+
+            .nav-active ul {
+                flex-direction: column; /* Stack menu items vertically */
+                gap: 15px; /* Space between items */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .show-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Even smaller for very small screens */
+            }
+        }
+
+        /* Footer Section */
+        footer {
+            padding: 10px;
+            text-align: center;
+            color: #ff6347;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header Section with Logo on the Left and Menu on the Right -->
+    <header>
+        <div class="logo">MediaVibeIT</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Welcome Message -->
+    <div class="welcome-message">
+        <h1>Watch Movies & TV Serials</h1>
+        <p>Watch Telugu Movies with HD (Quality) and watch Telugu Serials daily updated</p>
+    </div>
+
+    <!-- Serials Label Centered -->
+    <div class="section-label">Serials</div>
+
+    <!-- Grid Section: Responsive Shows Grid -->
+    <div class="show-grid">
+        <!-- First show item -->
+        <div class="show-item">
+            <img src="https://images.filmibeat.com/webp/te/img/2024/08/karthika-deepam-2-8832-1723999553.jpg" alt="Karthika Deepam 2">
+            <a href="karthika-deepam.html" class="title">Karthika Deepam 2</a>
+        </div>
+
+        <!-- Second show item -->
+        <div class="show-item">
+            <img src="https://upload.wikimedia.org/wikipedia/en/f/f9/Brahmamudi.jpg" alt="Brahmamudi">
+            <a href="brahmamudi.html" class="title">Brahmamudi</a>
+        </div>
+
+        <!-- Third show item -->
+        <div class="show-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2qab8nYPofy3fraUeubM-WVGwLll1Efb6cnk3583uqm7tCe-QW-y4KOl&s=10" alt="Satya Bhama">
+            <a href="satya-bhama.html" class="title">Satya Bhama</a>
+        </div>
+
+        <!-- Fourth show item -->
+        <div class="show-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh2Hf1NO8Ir_sMRioZXDYySscfhx0G8NE_L0crKeK8KYpAHQU7-1TNvIc&s=10" alt="Chinni">
+            <a href="chinni.html" class="title">Chinni</a>
+        </div>
+
+        <!-- Fifth show item -->
+        <div class="show-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFoJiuXby606i6oY1MNEiYlG9Iy_Y3On30w&usqp=CAU" alt="Mama Garu">
+            <a href="mama-garu.html" class="title">Mama Garu</a>
+        </div>
+    </div>
+
+    <!-- Movies Label Centered -->
+    <div class="section-label">Movies</div>
+
+    <!-- Grid Section: Movies Grid -->
+    <div class="show-grid">
+        <!-- First movie item -->
+        <div class="show-item">
+            <img src="https://via.placeholder.com/150" alt="Movie 1">
+            <a href="movie1.html" class="title">Movie 1</a>
+        </div>
+
+        <!-- Second movie item -->
+        <div class="show-item">
+            <img src="https://via.placeholder.com/150" alt="Movie 2">
+            <a href="movie2.html" class="title">Movie 2</a>
+        </div>
+
+        <!-- Third movie item -->
+        <div class="show-item">
+            <img src="https://via.placeholder.com/150" alt="Movie 3">
+            <a href="movie3.html" class="title">Movie 3</a>
+        </div>
+
+        <!-- Fourth movie item -->
+        <div class="show-item">
+            <img src="https://via.placeholder.com/150" alt="Movie 4">
+            <a href="movie4.html" class="title">Movie 4</a>
+        </div>
+
+        <!-- Fifth movie item -->
+        <div class="show-item">
+            <img src="https://via.placeholder.com/150" alt="Movie 5">
+            <a href="movie5.html" class="title">Movie 5</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 MediaVibeIT</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('nav-active');
+        }
+    </script>
+</body>
 </html>
