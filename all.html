@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<script src="https://ssl.p.jwpcdn.com/player/v/8.22.0/jwplayer.js"></script>
+		<script>
+			jwplayer.key = 'cLGMn8T20tGvW+0eXPhq4NNmLB57TrscPjd1IyJF84o=';
+		</script>
+		<style>
+			#player {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #000;
+			}
+
+			/* Custom player styles */
+			.jw-title-container {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				z-index: 10;
+				color: #ff6347;
+				background-color: rgba(0, 0, 0, 0.5);
+				/* Slightly transparent background */
+				padding: 5px 10px;
+				border-radius: 5px;
+			}
+
+			.jw-title-primary {
+				font-weight: bold;
+				font-size: 1.5em;
+				color: #ff6347 !important;
+			}
+
+			.jwplayer .jw-progress {
+				background-color: #ff6347;
+			}
+
+			.jwplayer .jw-text-time {
+				color: #ff6347 !important;
+			}
+
+			button:hover {
+				background: #ff6347 !important;
+			}
+
+			.jw-rightclick .jw-reset {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="player"></div>
+
+		<script>
+			var jwp = jwplayer('player');
+			jwp.setup({
+				aspectratio: "16:9",
+				width: "100%",
+				height: "100%",
+				playlist: [{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721288/8d7477758bfec0ba32ed72b76b3df509.mp4/index.m3u8",
+						image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTK2qab8nYPofy3fraUeubM-WVGwLll1Efb6cnk3583uqm7tCe-QW-y4KOl&s=10",
+						title: "Satya Bhama",
+						description: "Watch Satya Bhama in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721271/61923f58a0f848f9f1fbb32e64ef9116.mp4/index.m3u8",
+						image: "https://upload.wikimedia.org/wikipedia/en/f/f9/Brahmamudi.jpg",
+						title: "Brahmamudi",
+						description: "Watch Brahmamudi in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721335/10e3897abc43529ba664c15303d83867.mp4/index.m3u8",
+						image: "https://images.filmibeat.com/webp/te/img/2024/08/karthika-deepam-2-8832-1723999553.jpg",
+						title: "Karthika Deepam 2",
+						description: "Watch Karthika Deepam 2 in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721376/3ba1d74094a6f76cf647d349e0c78ddb.mp4/index.m3u8",
+						image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCFoJiuXby606i6oY1MNEiYlG9Iy_Y3On30w&usqp=CAU",
+						title: "Mama",
+						description: "Watch Mama in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721411/1476b9e4b0aa6ad6a62a9e861d9b6a10.mp4/index.m3u8",
+						image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh2Hf1NO8Ir_sMRioZXDYySscfhx0G8NE_L0crKeK8KYpAHQU7-1TNvIc&s=10",
+						title: "Chinni",
+						description: "Watch Chinni in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721328/5eb42479d8c66f60e84c960ee604fec6.mp4/index.m3u8",
+						image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxrBgP50NbIevOVfSBI8sGR2SavPSIWtBCNdDgbEuvNeMGXmtcLcaefiw&s=10",
+						title: "Intinti Ramayanam",
+						description: "Watch Intinti Ramayanam in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721264/9cfa6958406d41943a1accc04ef983b5.mp4/index.m3u8",
+						image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYJT82UcLsdmm05WHtTlrbfUdFWNzygXJ34wZbVldv_UvT9c7znd5PihNU&s=10",
+						title: "Malli",
+						description: "Watch Malli in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721298/7708ccbb1ad69f1253bfc9c7528b8238.mp4/index.m3u8",
+						image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvxFuuSUhcrMw-1LEby3Vlwg6YKbWY_uR9Iu7Q6LuIZweldrFGC4UIPJo&s=10",
+						title: "Yeto Vellipoyindhi Manasu",
+						description: "Watch Yeto Vellipoyindhi Manasu in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1719816/24b14eace31d017adfd669f1cf5c8851.mp4/index.m3u8",
+						image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg1cUQRXQfhaJJJmRwjl3Z1XBGA7BeHuVJAz3QMkkROFW21wfKmmN6aTcg&s=10",
+						title: "Gunde Ninda Gudi Gantalu",
+						description: "Watch Gunde Ninda Gudi Gantalu in 720p quality."
+					},
+					{
+						file: "https://58a49ee706238.streamlock.net:8485/uploads/jio_1721299/ab57c9d9c5fb8b5ec8ba68edb646dd91.mp4/index.m3u8",
+						image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNmLV2x5LB7wM-zSHGl2u0G4bbEf5Mlf-6NA&usqp=CAU",
+						title: "Maguva O Maguva",
+						description: "Watch Maguva O Maguva in 720p quality."
+					}
+				]
+			});
+
+			jwp.on('playlistItem', function() {
+				var title = jwp.getPlaylistItem().title;
+				document.querySelector('.jw-title-container').innerText = title;
+			});
+
+			// Custom forward button to skip 10 seconds
+			jwp.addButton(
+				'https://www.kindpng.com/picc/b/79-797059_forward-icon-png.png',
+				'Forward 10 seconds',
+				function() {
+					jwp.seek(jwp.getPosition() + 10);
+				},
+				'forward10'
+			);
+		</script>
+
+		<div class="jw-title-container"></div>
+
+	</body>
+
+</html>
