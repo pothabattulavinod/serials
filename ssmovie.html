@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<script src="https://ssl.p.jwpcdn.com/player/v/8.22.0/jwplayer.js"></script>
+		<script>
+			jwplayer.key = 'cLGMn8T20tGvW+0eXPhq4NNmLB57TrscPjd1IyJF84o=';
+		</script>
+		<style>
+			html,
+			body {
+				padding: 0;
+				margin: 0;
+				height: 100%;
+			}
+
+			#player {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #000;
+			}
+
+			/* Custom player styles */
+			.jw-title-container {
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				z-index: 10;
+				color: #ff6347;
+			}
+
+			.jw-title-primary {
+				font-weight: bold;
+				font-size: 1.5em;
+				color: #ff6347 !important;
+			}
+
+			.jwplayer .jw-progress {
+				background-color: #ff6347;
+			}
+
+			.jwplayer .jw-text-time {
+				color: #ff6347 !important;
+			}
+
+			button:hover {
+				background: #ff6347 !important;
+			}
+
+			.jw-rightclick .jw-reset {
+				display: none;
+			}
+
+			/* Custom subtitle styles */
+			.jwplayer .jw-caption {
+				color: #fff !important;
+				font-size: 1.2em;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+				bottom: 20%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="player"></div>
+
+		<script>
+			var urls = [
+				"https://cdn.boostpng.com/Saripodhaa_Sanivaaram_(2024)_Tel_720p.mkv",
+				"https://public.mirrorleechupdates.workers.dev/0:/Saripodhaa_Sanivaaram_(2024)_Tel_720p.mkv"
+			];
+
+			// Randomly select one of the URLs
+			var randomUrl = urls[Math.floor(Math.random() * urls.length)];
+
+			var jwp = jwplayer('player');
+			jwp.setup({
+				aspectratio: "16:9",
+				width: "100%",
+				height: "100%",
+				sources: [{
+					file: randomUrl,
+					type: "mp4",
+					label: "480p",
+					default: true
+				}],
+				image: "https://assets-in.bmscdn.com/discovery-catalog/events/et00388631-ggemjdwujm-landscape.jpg",
+				primary: "html5",
+				preload: "auto",
+				bufferLength: 5,
+				hlshtml: true,
+				controls: true,
+				displayPlaybackLabel: false,
+				playbackRateControls: true,
+				liveTimeout: 2,
+				dvrSeekLimit: 60,
+				dvrWindow: 3600,
+				tracks: [{
+					file: "https://raw.githubusercontent.com/pothabattulavinod/Ss/refs/heads/main/Saripodhaa%20Sanivaaram.vtt",
+					kind: "subtitles",
+					label: "English",
+					default: true
+				}]
+			});
+
+			// Custom forward button to skip 10 seconds
+			jwp.addButton(
+				'https://www.kindpng.com/picc/b/79-797059_forward-icon-png.png',
+				'Forward 10 seconds',
+				function() {
+					jwp.seek(jwp.getPosition() + 10);
+				},
+				'forward10'
+			);
+		</script>
+	</body>
+
+</html>
